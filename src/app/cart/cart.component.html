@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Termék megnevezése</th>
+    <th>Egységár</th>
+    <th>Darab</th>
+    <th>Áfa százalék</th>
+    <th>Bruttó ár</th>
+  </tr>
+  <tr *ngFor="let product of cart">
+    <td>{{product.title.short}}</td>
+    <td>{{product.price}} Ft</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.tax}} %</td>
+    <td>{{product.price * product.quantity * (1 + (product.tax/100))}} Ft</td>
+  </tr>
+  <tfoot>
+  <tr>
+    <td>Összes</td>
+    <td></td>
+    <td>{{sumQuantity}}</td>
+    <td></td>
+    <td>{{sumPrice}} Ft</td>
+  </tr>
+  </tfoot>
+</table>

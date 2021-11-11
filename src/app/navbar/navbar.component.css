@@ -1,0 +1,9 @@
+.right-side {
+  float: right;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}

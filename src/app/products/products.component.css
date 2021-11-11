@@ -1,0 +1,11 @@
+.box-container {
+  width: 30%;
+  border: 2px solid black;
+  margin: 5px;
+  float: left;
+  cursor: pointer;
+}
+
+.container {
+  margin: 10px;
+}

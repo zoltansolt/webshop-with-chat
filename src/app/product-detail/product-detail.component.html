@@ -1,0 +1,15 @@
+<h2>{{product?.title?.long}}</h2>
+<h2>{{product?.price}} Ft</h2>
+<div>
+  {{product.content?.long}}
+</div>
+<div class="images">
+  <div *ngFor="let image of product.images" class="image-container">
+    <img [src]="image.url" alt="">
+  </div>
+</div>
+
+<div class="input-container">
+  <input type="number" [(ngModel)]="quantity">
+  <button (click)="addToCart()">Kosárba</button>
+</div>

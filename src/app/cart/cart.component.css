@@ -1,0 +1,16 @@
+th, td {
+  text-align: left;
+  border: 1px solid black;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+th {
+  background-color: gray;
+}
+
+table {
+  margin: 20px;
+}

@@ -1,0 +1,51 @@
+
+<div id="body">
+
+  <div id="chat-circle" class="btn btn-raised" (click)="openChat()">
+    <div id="chat-overlay"></div>
+    <i class="material-icons">speaker_phone</i>
+    <span [matBadge]="unreadMessages" matBadgeOverlap="false"></span>
+  </div>
+
+  <div class="chat-box">
+    <div class="chat-box-header">
+      ChatBot
+      <span class="chat-box-toggle" (click)="chatBoxToggle()"><i class="material-icons">close</i></span>
+    </div>
+    <div class="chat-box-body">
+      <div *ngIf="!username">
+        <div class="chat-box-overlay">
+        </div>
+        <div class="chat-logs">
+          Mi a neved paraszt
+        </div>
+        </div>
+      <div *ngIf="username">
+        <div class="chat-box-overlay">
+        </div>
+        <div class="chat-logs">
+          <div *ngFor="let msg of messages">
+            <span *ngIf="msg.type === 'newMessage'">{{msg.nickname}}: </span>
+            <span *ngIf="msg.type === 'sendMessage'">{{username}}: </span>
+            <span *ngIf="msg.type === 'logout' && msg.nickname">{{msg.nickname}} kilépett </span>
+            <span>{{msg.message}}</span>
+            <span *ngIf="msg.type === 'sendMessage' && msg.message !== 'törölve'" (click)="deleteMessage(msg)">------>törlés</span>
+          </div>
+          <div *ngFor="let typing of typings">
+            <span>{{typing.nickname}} éppen ír</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <form [formGroup]="inputForm">
+        <input type="text" id="chat-input" placeholder="Send a message..." formControlName="message" (change)="typing()"/>
+        <button type="submit" class="chat-submit" id="chat-submit" (click)="submit($event)"><i class="material-icons">send</i></button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+</div>

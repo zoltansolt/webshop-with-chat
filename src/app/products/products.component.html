@@ -1,0 +1,6 @@
+<div class="container">
+  <div class="box-container" *ngFor="let product of products">
+    <app-product-box  [product]="product" [routerLink]="'../product/' + product.id"></app-product-box>
+  </div>
+</div>
+
