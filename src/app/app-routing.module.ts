@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
 import {ProductsComponent} from "./products/products.component";
 import {ProductsResolver} from "./products/products.resolver";
 import {ProductDetailComponent} from "./product-detail/product-detail.component";
 import {CartComponent} from "./cart/cart.component";
+import {ChatComponent} from "./chat/chat.component";
 
 const routes: Routes = [
   {
@@ -26,6 +25,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent
+  },
+  {
+    path: 'chat',
+    component: ChatComponent
   }
 ];
 

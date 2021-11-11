@@ -10,9 +10,12 @@ import { ProductBoxComponent } from './products/product-box/product-box.componen
 import {AppRoutingModule} from "./app-routing.module";
 import {ProductsResolver} from "./products/products.resolver";
 import {ProductsService} from "./products/products.service";
-import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {ChatComponent} from "./chat/chat.component";
+import { ChatComponent } from './chat/chat.component';
+import {ChatService} from "./chat/chat.service";
+import {MatBadgeModule} from "@angular/material/badge";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,13 @@ import {ChatComponent} from "./chat/chat.component";
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatBadgeModule
+    MatBadgeModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProductsResolver,
-    ProductsService
+    ProductsService,
+    ChatService
   ],
   bootstrap: [AppComponent]
 })
