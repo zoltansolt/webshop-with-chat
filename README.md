@@ -1,2 +1,2 @@
-# webshot-with-chat
-A simpe webshot with chat option in Angular
+# webshop-with-chat
+A simpe webshop with chat option in Angular
